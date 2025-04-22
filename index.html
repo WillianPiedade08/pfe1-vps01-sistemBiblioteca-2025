@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>DOOK LIST</h1>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <input type="text" id="search" placeholder="Buscar livro..." />
+            <button class="search-btn">Buscar</button>
+        </section>
+
+        <section class="book-list">
+            <div class="card-container">
+                <div class="card" data-year="1605" data-publisher="Editora Clássicos" data-genre="Romance" data-description="Um romance satírico sobre um fidalgo que acredita ser um cavaleiro andante.">
+                    <h3>Dom Quixote</h3>
+                    <p><strong>Autor:</strong> Miguel de Cervantes</p>
+                    <p><strong>Ano:</strong> 1605</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1949" data-publisher="Companhia das Letras" data-genre="Distopia" data-description="Um retrato sombrio de um futuro totalitário.">
+                    <h3>1984</h3>
+                    <p><strong>Autor:</strong> George Orwell</p>
+                    <p><strong>Ano:</strong> 1949</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1945" data-publisher="Editora B" data-genre="Fábula política" data-description="Uma alegoria sobre o totalitarismo disfarçado de fábula animal.">
+                    <h3>A Revolução dos Bichos</h3>
+                    <p><strong>Autor:</strong> George Orwell</p>
+                    <p><strong>Ano:</strong> 1945</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1943" data-publisher="Agir" data-genre="Infantil/Filosófico" data-description="Um conto filosófico com críticas sociais sutis.">
+                    <h3>O Pequeno Príncipe</h3>
+                    <p><strong>Autor:</strong> Antoine de Saint-Exupéry</p>
+                    <p><strong>Ano:</strong> 1943</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1813" data-publisher="Penguin" data-genre="Romance" data-description="A história de Elizabeth Bennet enquanto lida com questões de classe e amor.">
+                    <h3>Orgulho e Preconceito</h3>
+                    <p><strong>Autor:</strong> Jane Austen</p>
+                    <p><strong>Ano:</strong> 1813</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1937" data-publisher="HarperCollins" data-genre="Fantasia" data-description="A jornada de Bilbo Bolseiro em uma aventura pela Terra Média.">
+                    <h3>O Hobbit</h3>
+                    <p><strong>Autor:</strong> J.R.R. Tolkien</p>
+                    <p><strong>Ano:</strong> 1937</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1851" data-publisher="Nova Fronteira" data-genre="Aventura" data-description="A obsessiva caçada do capitão Ahab pela baleia branca.">
+                    <h3>Moby Dick</h3>
+                    <p><strong>Autor:</strong> Herman Melville</p>
+                    <p><strong>Ano:</strong> 1851</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1915" data-publisher="L&PM" data-genre="Ficção filosófica" data-description="Um homem acorda transformado em um inseto gigante.">
+                    <h3>A Metamorfose</h3>
+                    <p><strong>Autor:</strong> Franz Kafka</p>
+                    <p><strong>Ano:</strong> 1915</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1956" data-publisher="Nova Aguilar" data-genre="Romance" data-description="Um clássico da literatura brasileira sobre o sertão e seus conflitos.">
+                    <h3>Grande Sertão: Veredas</h3>
+                    <p><strong>Autor:</strong> João Guimarães Rosa</p>
+                    <p><strong>Ano:</strong> 1956</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+                <div class="card" data-year="1997" data-publisher="Rocco" data-genre="Fantasia" data-description="O começo da jornada de um jovem bruxo em Hogwarts.">
+                    <h3>Harry Potter e a Pedra Filosofal</h3>
+                    <p><strong>Autor:</strong> J.K. Rowling</p>
+                    <p><strong>Ano:</strong> 1997</p>
+                    <button class="detail-btn">Detalhes</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal único -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-author"></p>
+            <p id="modal-year"></p>
+            <p id="modal-genre"></p>
+            <p id="modal-publisher"></p>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer>
+        by Willian
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
