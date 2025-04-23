@@ -1,15 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const detailButtons = document.querySelectorAll('.detail-btn');
+  
   const modal = document.getElementById('modal');
   const modalTitle = document.getElementById('modal-title');
   const modalAuthor = document.getElementById('modal-author');
   const modalYear = document.getElementById('modal-year');
-  const modalPublisher = document.getElementById('modal-publisher');
   const modalGenre = document.getElementById('modal-genre');
+  const modalPublisher = document.getElementById('modal-publisher');
   const modalDescription = document.getElementById('modal-description');
   const closeModal = document.querySelector('.close-btn');
 
-  detailButtons.forEach((button) => {
+  
+  closeModal.addEventListener('click', () => {
+    modal.classList.remove('visible');
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.classList.remove('visible');
+    }
+  });
+
+  
+  const addDetailEvent = (button) => {
     button.addEventListener('click', (event) => {
       const card = event.target.closest('.card');
 
@@ -29,15 +41,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modal.classList.add('visible');
     });
+  };
+
+  const detailButtons = document.querySelectorAll('.detail-btn');
+  detailButtons.forEach(addDetailEvent);
+
+  
+  const registerBtn = document.getElementById('register-btn');
+  const registerCard = document.getElementById('register-card');
+
+  registerBtn.addEventListener('click', () => {
+    registerCard.style.display =
+      registerCard.style.display === 'none' || registerCard.style.display === ''
+        ? 'block'
+        : 'none';
   });
 
-  closeModal.addEventListener('click', () => {
-    modal.classList.remove('visible');
-  });
+  
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.addEventListener('click', () => {
+    const title = document.getElementById('book-Livro').value;
+    const author = document.getElementById('book-Leitor').value;
+    const cpf = document.getElementById('book-CPF').value;
+    const rentalDate = document.getElementById('book-Data de Locação').value;
+    const returnDate = document.getElementById('book-Data Prevista de Devolução').value;
 
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.classList.remove('visible');
+    if (title && author && cpf && rentalDate && returnDate) {
+      const cardContainer = document.querySelector('.card-container');
+
+      
+      const newCard = document.createElement('div');
+      newCard.classList.add('card');
+      newCard.setAttribute('data-year', rentalDate);
+      newCard.setAttribute('data-publisher', 'N/A');
+      newCard.setAttribute('data-genre', 'N/A');
+      newCard.setAttribute('data-description', `Locação: ${rentalDate}, Devolução: ${returnDate}`);
+
+      newCard.innerHTML = `
+        <h3>${title}</h3>
+        <p><strong>Autor:</strong> ${author}</p>
+        <p><strong>CPF:</strong> ${cpf}</p>
+        <button class="detail-btn">Detalhes</button>
+      `;
+
+      
+      const newDetailBtn = newCard.querySelector('.detail-btn');
+      addDetailEvent(newDetailBtn);
+
+      cardContainer.appendChild(newCard);
+
+      
+      document.getElementById('book-Livro').value = '';
+      document.getElementById('book-Leitor').value = '';
+      document.getElementById('book-CPF').value = '';
+      document.getElementById('book-Data de Locação').value = '';
+      document.getElementById('book-Data Prevista de Devolução').value = '';
+
+     
+      registerCard.style.display = 'none';
+    } else {
+      alert('Por favor, preencha todos os campos!');
     }
   });
 });
