@@ -29,7 +29,10 @@ Desenvolver as funcionalidades conforme requisitos
     - [RF002.1] Sistema deve ter um formulário de locação.
     - [RF002.2] Dados do formulário: Nome do livro, nome do locatário, CPF, data de locação e devolução
     - [RF002.3] Deve validar se o CPF tem 11 digítos (sem pontuações).
-- [RF003] Todos os dados dos livros e cadastros de locação devem ser armazenados em LocalStorage.
+- [RF003] Todos os dados dos livros e cadastros de locação devem ser armazenados em LocalStorage e exibidos em uma tabela dentro de outra página chamada locacoes.html.
+    - [RF003.1] Na tela primcipal deve ter um ítem de menu para direcionar para a página de locações e na página de locações um botão para voltar
+    - [RF003.1] A tabela na página de locações deve ser responsiva sendo exibida tanto em tela de computador quanto celular.
+- [RF004] Todas as telad devem ser responsivas.
 
 ### Casos de teste do Front-End
  - [CT001] Validar a responsividade.
